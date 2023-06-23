@@ -1,6 +1,8 @@
 import React from "react";
 import Link from "next/link";
 import Search from "./Search";
+import Profile from "./Profile";
+import Togglar from "./Togglar";
 const Nav = () => {
   const linksArr = [
     {
@@ -13,8 +15,10 @@ const Nav = () => {
     },
   ];
   return (
-    <nav className="bg-black p-1 px-2 flex justify-between">
-      <Link href={"/"}>LOGO</Link>
+    <nav className=" bg-green-500  dark:bg-black p-1 px-2 flex justify-between items-center ">
+      <Link href={"/"}>
+        <Profile />
+      </Link>
       <ul className="flex justify-between h-1/4 gap-2">
         <Search />
         {linksArr.map(({ href, link }, i) => {
@@ -25,6 +29,7 @@ const Nav = () => {
             </li>
           );
         })}
+        <Togglar />
       </ul>
     </nav>
   );

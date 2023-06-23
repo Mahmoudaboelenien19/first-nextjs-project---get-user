@@ -1,7 +1,7 @@
 import Nav from "./components/Nav";
 import "./globals.css";
 import { Inter } from "next/font/google";
-
+import ThemesProvider from "../app/providers/ThemeProvider.js";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -17,12 +17,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`bg-green-400  min-h-screen 
+        className={`  min-h-screen  min-w-full
         ${inter.className}`}
-        // p-0 m-0 box-border
       >
-        <Nav />
-        {children}
+        <ThemesProvider>
+          <Nav />
+          <div className="bg-main">test</div>
+          {children}
+        </ThemesProvider>
       </body>
     </html>
   );

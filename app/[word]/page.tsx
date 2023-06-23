@@ -23,7 +23,7 @@ const Result = async ({ params: { word } }: Props) => {
   if (!data) return notFound();
 
   return (
-    <div className="flex justify-center items-center w-full h-[calc(100vh-40px)] flex-col">
+    <div className="flex justify-center items-center w-full h-[calc(100vh-40px)] flex-col  bg-white dark:bg-black">
       <div className="bg-gray-700 rounded">
         <p className="text-white w-fit  px-2 py-1 ">userName- {data.name}</p>
         <p className="text-white w-fit  px-2 py-1 ">userID- {data.id}</p>
